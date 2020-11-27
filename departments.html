@@ -133,6 +133,45 @@
                     </ul>
                 </div>
             </aside>
+
+            <!-- modals -->
+
+            <!-- Modal -->
+            <div class="modal fade" id="editDepartment" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Department</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label><strong>Change Department's Name</strong></label>
+                                    <input type="text" class="form-control departmentName" placeholder="Enter Department's name">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label><strong>Change Department's Head</strong></label>
+                                    <input type="text" class="form-control departmentHead" placeholder="Enter department's head">
+                                    <small>Enter the employee's Number to continue</small>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-light py-4">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
 			
 			<div class="content--full map-main-container d-none">
 					<div class="col-12">
@@ -178,12 +217,12 @@
                     <div class="row">
                         <div class="col-md-8 col-sm-12">
                             <span class="rev-title-container">
-                                    <h1 class="text-capitalize stream_name m-0">System Users</h1>
+                                    <h1 class="text-capitalize stream_name m-0">Department</h1>
                                    </span>
                             <div class="">
                                 <ol class="breadcrumb border-0">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active">System Users</li>
+                                    <li class="breadcrumb-item active">Departments</li>
     
                                 </ol>
                             </div>
@@ -199,10 +238,10 @@
                     <div class="col-12 mb-3">
                         <ul class="nav nav-pills navigated">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Users</a>
+                                <a class="nav-link active" href="#">Departments</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Add User</a>
+                                <a class="nav-link" href="#">Add A department</a>
                             </li>                          
 
                         </ul>
@@ -217,41 +256,34 @@
                                     <table class="table table-hover table-custom spacing8" id="data-table">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th></th>
-                                                <th>System Role</th>
-                                                <th>Created Date</th>
-                                                <th>Role</th>
+                                                <th>#</th>
+                                                <th>Department Name</th>
+                                                <th>Department Head</th>
+                                                <th>Total Employees</th>
                                                 <th>Action</th>                                                
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="width45">
-                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
-                                                    </div>
+                                                    1
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
-
+                                                    Finance
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                    Alex Wafula Mukoi
                                                 </td>
                                                 <td>
-                                                    23 Oct 2020
+                                                    23
                                                 </td>
-                                                <td>
-                                                    Finance Manager
-                                                </td>
+                                               
                                                 <td>
                                                     <button class="btn btn-sm btn-danger btn--icon-text ml-2">
                                                         <i class="zmdi zmdi-delete"></i> Delete
                                                     </button>
 
-                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2">
+                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2 editDepartment" data-toggle="modal" data-target="#editDepartment">
                                                         <i class="zmdi zmdi-edit"></i> Edit
                                                     </button>
 
@@ -260,30 +292,24 @@
 
                                             <tr>
                                                 <td class="width45">
-                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
-                                                    </div>
+                                                    2
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
-
+                                                    Marketing
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                   Wafula Mtambuliki
                                                 </td>
                                                 <td>
-                                                    23 Oct 2020
+                                                    23
                                                 </td>
-                                                <td>
-                                                    Finance Manager
-                                                </td>
-                                                <td>
+                                               
+                                               <td>
                                                     <button class="btn btn-sm btn-danger btn--icon-text ml-2">
                                                         <i class="zmdi zmdi-delete"></i> Delete
                                                     </button>
 
-                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2">
+                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2 editDepartment" data-toggle="modal" data-target="#editDepartment">
                                                         <i class="zmdi zmdi-edit"></i> Edit
                                                     </button>
 
@@ -292,30 +318,24 @@
 
                                             <tr>
                                                 <td class="width45">
-                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
-                                                    </div>
+                                                    3
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
-
+                                                    Customer Service
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                    Faith Kazuri
                                                 </td>
                                                 <td>
-                                                    23 Oct 2020
+                                                    23
                                                 </td>
-                                                <td>
-                                                    Finance Manager
-                                                </td>
-                                                <td>
+                                               
+                                               <td>
                                                     <button class="btn btn-sm btn-danger btn--icon-text ml-2">
                                                         <i class="zmdi zmdi-delete"></i> Delete
                                                     </button>
 
-                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2">
+                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2 editDepartment" data-toggle="modal" data-target="#editDepartment">
                                                         <i class="zmdi zmdi-edit"></i> Edit
                                                     </button>
 
@@ -324,30 +344,24 @@
 
                                             <tr>
                                                 <td class="width45">
-                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
-                                                    </div>
+                                                    4
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
-
+                                                    Support
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                    Sam Mlinzi
                                                 </td>
                                                 <td>
-                                                    23 Oct 2020
+                                                    23
                                                 </td>
-                                                <td>
-                                                    Finance Manager
-                                                </td>
-                                                <td>
+                                               
+                                               <td>
                                                     <button class="btn btn-sm btn-danger btn--icon-text ml-2">
                                                         <i class="zmdi zmdi-delete"></i> Delete
                                                     </button>
 
-                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2">
+                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2 editDepartment" data-toggle="modal" data-target="#editDepartment">
                                                         <i class="zmdi zmdi-edit"></i> Edit
                                                     </button>
 
@@ -356,30 +370,24 @@
 
                                             <tr>
                                                 <td class="width45">
-                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
-                                                    </div>
+                                                    5
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
-
+                                                   Accounts
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                   Tanakali John
                                                 </td>
                                                 <td>
-                                                    23 Oct 2020
+                                                    23
                                                 </td>
-                                                <td>
-                                                    Finance Manager
-                                                </td>
-                                                <td>
+                                               
+                                               <td>
                                                     <button class="btn btn-sm btn-danger btn--icon-text ml-2">
                                                         <i class="zmdi zmdi-delete"></i> Delete
                                                     </button>
 
-                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2">
+                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2 editDepartment" data-toggle="modal" data-target="#editDepartment">
                                                         <i class="zmdi zmdi-edit"></i> Edit
                                                     </button>
 
@@ -397,7 +405,7 @@
                                     <div class="col">
                                     <!-- Title -->
                                     <h4 class="card-header-title py-2">
-                                       New System User
+                                      New Department
                                     </h4>
                                     </div>
     
@@ -408,169 +416,33 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-4 bg-light">
                                            <div class="row">
-                                               <div class="col-12 padding-custom">
+                                               <div class="col-12 padding-custom pt-4">
                                                     <div class="form-group">
-                                                        <label><strong>Employee ID</strong></label>
-                                                    <div class="form-inline d-flex">
-                                                            <input type="text" class="form-control flex-grow-1" placeholder="Enter The Employee ID">
-                                                            <button class="btn btn-info btn--icon-text ml-2 searching"><i class="zmdi zmdi-search "></i>Search</button>
+                                                        <label><strong>Department Name</strong></label>
+                                                        <input type="text" class="form-control" placeholder="Enter Department name">
                                                     </div>
-                                                        <small>This must be entered first to continue</small>
-                                                    </div>
-                                               </div>
-                                               <div class="col-12 p-0 user-searched d-none animated fade-in-down">
-                                                   <hr>
-                                                <div class="listview listview--bordered">
-                                                    <div class="listview__item pt-0">
-                                                        <div class="listview__content">
-                                                            <div class="listview__heading">Name</div>
-                                                            <p><strong>Alex Wanjala Wafula</strong> - Finance Officer</p>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="listview__item pt-0">
-                                                        <div class="listview__content">
-                                                            <div class="listview__heading">Email Address</div>
-                                                            <p><strong>alex@gmail.com</strong></p>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="listview__item pt-0">
-                                                        <div class="listview__content">
-                                                            <div class="listview__heading">Phone</div>
-                                                            <p><strong><a href="tel:0705262358">0705262358</a></strong></p>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="listview__item pt-0">
-                                                        <div class="listview__content">
-                                                            <div class="listview__heading">Emp Number</div>
-                                                            <p><strong>HGH2313</strong></p>
-                                                        </div>
-                                                    </div>                        
-                                                   
-                                                </div>
-                                               </div>
 
-                                               <div class="col-12 p-5 not-searched animated fade-in-down">
-                                                   <img src="demo/img/form-svgs/open-box.svg">
-                                                   <p><strong>Search for an employee to continue</strong></p>
-                                               </div>
-                                           </div>
+                                                    <div class="form-group mb-5">
+                                                        <label><strong>Department Head</strong></label>
+                                                        <input type="text" class="form-control" placeholder="Enter head'sEmp Num.">
+                                                        <small>Enter department's head Employee Number</small>
+                                                    </div>  
+                                                    
+                                                    <button class="btn btn-primary btn--icon-text mt-5">Add Department</button>
+                                                        
+                                                </div>
+
+                                                
+                                            </div>
+                                        
+
+                                       
                                         </div>
 
                                         <div class="col-sm-12 col-md-8">
                                             <div class="row">
-                                               <div class="col-12">
-                                                   <h4>Module permissions</h4>
-                                                   <p class="mb-4">Select the permissions that this user will be given access to</p>
-                                                    <table class="table large-font-table">
-                                                        <thead>
-                                                        <tr>
-                                                            <th scope="col"></th>
-                                                            <th scope="col"><strong>Read</strong></th>
-                                                            <th scope="col"><strong>Write</strong></th>
-                                                            <th scope="col"><strong>Delete</strong></th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="pl-0"><strong>Super Admin</strong></td>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck1">
-                                                                    <label class="checkbox__label" for="customCheck1">Can Read</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck2">
-                                                                    <label class="checkbox__label" for="customCheck2">Can Write</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck3">
-                                                                    <label class="checkbox__label" for="customCheck3">Can Delete</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="pl-0"><strong>Human Resource Admin</strong></td>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck10">
-                                                                    <label class="checkbox__label" for="customCheck10">Can Read</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck11">
-                                                                    <label class="checkbox__label" for="customCheck11">Can Write</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck12">
-                                                                    <label class="checkbox__label" for="customCheck12">Can Delete</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="pl-0"><strong>Finance Dashboard</strong></td>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck4">
-                                                                    <label class="checkbox__label" for="customCheck4">Can Read</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck5">
-                                                                    <label class="checkbox__label" for="customCheck5">Can Write</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck6">
-                                                                    <label class="checkbox__label" for="customCheck6">Can Delete</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td class="pl-0"><strong>Operational Dashboard</strong></td>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck7">
-                                                                    <label class="checkbox__label" for="customCheck7">Can Read</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck8">
-                                                                    <label class="checkbox__label" for="customCheck8">Can Write</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck9">
-                                                                    <label class="checkbox__label" for="customCheck9">Can Delete</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <hr>
-                                                    <button class="btn btn-primary btn--icon-text add-user-btn" disabled>Add User</button>
+                                               <div class="col-12 departmen-image">
+                                                   <img class="img" src="demo/img/form-svgs/department.svg">
                                                </div>
                                             </div>
                                         </div>

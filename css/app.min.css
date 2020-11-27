@@ -1547,7 +1547,7 @@ pre code {
 }
 .table td, .table th {
     padding: 1rem 1.5rem;
-    vertical-align: top;
+    vertical-align: middle;
     border-top: 1px solid #f2f4f5;
 	font-size: 12px;
     white-space: nowrap;
@@ -15906,4 +15906,32 @@ font-size: xx-large !important;
     font-weight: bold;
     display: block;
     text-align: center;
+}
+
+.large-font-table td, .large-font-table th{
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.padding-custom{
+padding:1.25rem 2.2rem;
+}
+.not-searched{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.not-searched img{
+    opacity: 0.2;
+    height: 130px;
+    margin-bottom: 20px;
+}
+.departmen-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.departmen-image img{
+    height: 300px;
 }

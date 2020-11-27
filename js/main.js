@@ -30,6 +30,29 @@ $(window).on('load', function(){
 		$('.the_day').text(dated);
 //		alert(moment(dated).format('LL'));
 	});
+
+	$('.searching').on('click', function(){
+		$('.user-searched').removeClass('d-none').next().addClass('d-none');
+		$('.add-user-btn').removeAttr('disabled');
+	});
+	
+
+	$('.navigated li a').on('click', function(){
+		var theIndex=$(this).parent().index();
+		$('.to-be-navigated .card').eq(theIndex).removeClass('d-none').siblings().addClass('d-none');
+		
+	});
+
+	// editing departments
+	$('body').on('click','.editDepartment', function(){
+		var departmentName=$(this).parent().siblings().eq(1).text();
+		var departmentHead=$(this).parent().siblings().eq(2).text();
+		$('#editDepartment .departmentName').val(departmentName);
+		$('#editDepartment .departmentHead').val(departmentHead);
+
+
+	});
+
 	
 	
 	//decline requests
@@ -1344,7 +1367,7 @@ $('.submit-mpesa').on('click', function(){
 	  }
 	  setTimeout(openReceipt, 5000);
 
-})
+});
 
 //owl initializer
 $(document).ready(function(){
