@@ -53,6 +53,57 @@ $(window).on('load', function(){
 
 	});
 
+	//leave button click
+	$('body').on('click', '.leaveButton', function(){
+		var applicantName=$(this).parent().siblings().eq(2).children('h5').text();
+		//alert(applicantName);
+		$('#leaveFormTitle').text(applicantName+"'s Leave application");
+	});
+
+	// image changing
+
+	$('#empProf').on('change', function(){
+		var theId=$(this).attr("id");
+		// alert(theId);
+        var theInput;
+        var lastCharacter=theId[theId.length-1];
+        theInput="input"+lastCharacter;
+
+        file_changed(theId);
+    });
+
+    function file_changed(theId){
+      
+		var selectedFile = document.getElementById(theId).files[0];
+		// alert(theId);
+        var img = document.getElementById('selected-image');
+        // var img2 = document.getElementById(theInput); 
+        // $('.upload-img-cont h6').addClass('d-none');
+        // $('#'+theInput).parent().addClass('no-img-bg');
+
+       
+
+       // $('.activation-form-container .upload-img-cont').addClass('no-img-bg');
+       
+        // var img = document.getElementsByClassName(theId);
+      
+        var reader = new FileReader();
+        reader.onload = function(){
+		   img.src = this.result;
+		   $('#selected-image').removeClass('the-imgage-previewe')
+		//    alert(this.result);
+        //    img2.src=this.result;
+          
+        }
+
+      
+        reader.readAsDataURL(selectedFile);
+        
+       }
+
+
+	//    image changing
+
 	
 	
 	//decline requests

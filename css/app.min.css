@@ -15935,3 +15935,23 @@ padding:1.25rem 2.2rem;
 .departmen-image img{
     height: 300px;
 }
+.prof-container{
+    height: 216px;
+    /* border: 1px solid #868e96; */
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prof-container img{
+    width: 100%;
+
+}
+
+.the-imgage-previewe{
+    height: 89px;
+    opacity: 24%;
+}
