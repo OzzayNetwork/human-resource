@@ -195,6 +195,27 @@
                 </div>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="slipModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Payslip</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
 			
 		
 			<section class="content custom-table-container">
@@ -226,10 +247,10 @@
                                 <a class="nav-link active" href="#">Employees Salary</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Employees On Leave</a>
+                                <a class="nav-link" href="#">Create Payslip</a>
                             </li>    
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Add an Employee</a>
+                                <a class="nav-link" href="#">Deductions & Earnings</a>
                             </li>                          
 
                         </ul>
@@ -491,9 +512,7 @@
                                                     <th>Name</th>
                                                     <th></th>
                                                     <th>Employee ID</th>
-                                                    <th>Leave Type</th>
-                                                    <th>Dates</th>
-                                                    <th>Reason</th> 
+                                                    <th>Last Payment date</th>
                                                     <th>Actions</th>                                               
                                                 </tr>
                                             </thead>
@@ -513,189 +532,20 @@
                                                     <td>
                                                         LA-0216
                                                     </td>
-                                                    <td>
-                                                       Casual Leave
-                                                    </td>
+                                                   
                                                     <td>
                                                         28 Jan, 2020 To 26 Feb,2020
                                                     </td>
+                                                    
                                                     <td>
-                                                        Attend Birthday party
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-dark btn--icon-text ml-2 leaveButton" data-toggle="modal" data-target="#terminateLeave">
-                                                            <i class="zmdi zmdi-calendar"></i> Terminate Leave
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-delete"></i> Delete
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-edit"></i> Edit
-                                                        </button>
-    
-                                                    </td>
-                                                </tr>
-    
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td class="width45">
-                                                        <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                            <span>MN</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="mb-0">Mary Njue</h5>
-                                                        <span>marynjue99@gmail.com</span>
-    
-                                                    </td>
-                                                    <td>
-                                                        LA-0216
-                                                    </td>
-                                                    <td>
-                                                       Casual Leave
-                                                    </td>
-                                                    <td>
-                                                        28 Jan, 2020 To 26 Feb,2020
-                                                    </td>
-                                                    <td>
-                                                        Attend Birthday party
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-dark btn--icon-text ml-2 leaveButton" data-toggle="modal" data-target="#terminateLeave">
-                                                            <i class="zmdi zmdi-calendar"></i> Terminate Leave
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-delete"></i> Delete
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-edit"></i> Edit
-                                                        </button>
-    
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td class="width45">
-                                                        <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                            <span>MN</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="mb-0">Mary Njue</h5>
-                                                        <span>marynjue99@gmail.com</span>
-    
-                                                    </td>
-                                                    <td>
-                                                        LA-0216
-                                                    </td>
-                                                    <td>
-                                                       Casual Leave
-                                                    </td>
-                                                    <td>
-                                                        28 Jan, 2020 To 26 Feb,2020
-                                                    </td>
-                                                    <td>
-                                                        Attend Birthday party
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-dark btn--icon-text ml-2 leaveButton" data-toggle="modal" data-target="#terminateLeave">
-                                                            <i class="zmdi zmdi-calendar"></i> Terminate Leave
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-delete"></i> Delete
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-edit"></i> Edit
-                                                        </button>
-
+                                                        <button class="btn btn-sm btn-primary btn--icon-text ml-2 leaveButton" data-toggle="modal" data-target="#slipModal">
+                                                            <i class="zmdi zmdi-money"></i> Create Slip
+                                                        </button>  
                                                         
     
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td class="width45">
-                                                        <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                            <span>MN</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="mb-0">Mary Njue</h5>
-                                                        <span>marynjue99@gmail.com</span>
     
-                                                    </td>
-                                                    <td>
-                                                        LA-0216
-                                                    </td>
-                                                    <td>
-                                                       Casual Leave
-                                                    </td>
-                                                    <td>
-                                                        28 Jan, 2020 To 26 Feb,2020
-                                                    </td>
-                                                    <td>
-                                                        Attend Birthday party
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-dark btn--icon-text ml-2 leaveButton" data-toggle="modal" data-target="#terminateLeave">
-                                                            <i class="zmdi zmdi-calendar"></i> Terminate Leave
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-delete"></i> Delete
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-edit"></i> Edit
-                                                        </button>
-    
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td class="width45">
-                                                        <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                            <span>MN</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <h5 class="mb-0">Mary Njue</h5>
-                                                        <span>marynjue99@gmail.com</span>
-    
-                                                    </td>
-                                                    <td>
-                                                        LA-0216
-                                                    </td>
-                                                    <td>
-                                                       Casual Leave
-                                                    </td>
-                                                    <td>
-                                                        28 Jan, 2020 To 26 Feb,2020
-                                                    </td>
-                                                    <td>
-                                                        Attend Birthday party
-                                                    </td>
-                                                    <td>
-                                                        <button class="btn btn-sm btn-dark btn--icon-text ml-2 leaveButton" data-toggle="modal" data-target="#terminateLeave">
-                                                            <i class="zmdi zmdi-calendar"></i> Terminate Leave
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-delete"></i> Delete
-                                                        </button>
-    
-                                                        <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                            <i class="zmdi zmdi-edit"></i> Edit
-                                                        </button>
-    
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -708,7 +558,7 @@
                                     <div class="col">
                                     <!-- Title -->
                                     <h4 class="card-header-title py-2">
-                                      Add employee
+                                      Add Payslip Items
                                     </h4>
                                     </div>
     
@@ -716,95 +566,74 @@
                                 <!-- / .row -->				
                                 </div>
                                 <div class="card-body payment-method-container">
-                                    <form class="row">
-                                        <div class="col-sm-12 col-md-8">
+                                    <div class="row">
+                                        <form class="col-sm-12 col-md-7">
                                             <div class="row">
-                                                <div class="col-sm-12 col-md-4">
+                                                <div class="col-sm-12 col-md-12">
                                                     <div class="form-group">
                                                         <label><strong>Employee ID</strong></label>
-                                                        <input type="text" class="form-control" placeholder="Enter Employee ID">
+                                                        <div class="form-inline d-flex">
+                                                                <input type="text" class="form-control flex-grow-1" placeholder="Enter Employee ID">
+                                                                <button class="btn btn-success btn--icon-text ml-2" style="padding: 10px;"><i class="zmdi zmdi-plus"></i>Add Item</button>
+                                                        </div>
+                                                        <div class="d-flex justify-content-center align-items-center">
+                                                            <img src="demo/img/form-svgs/payslip.svg" class="img" height="400px">
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-sm-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <label><strong>Department</strong></label>
-                                                       <select class="form-control selectpicker" data-live-search="true" title="Select the department">
-                                                        <option>Finance</option>
-                                                        <option>Marketing</option>
-                                                        <option>Human resource</option>
-                                                       </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <label><strong>Role</strong></label>
-                                                        <input type="text" class="form-control" placeholder="Enter roleD">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <label><strong>First Name</strong></label>
-                                                        <input type="text" class="form-control" placeholder="Enter first name">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <label><strong>Second Names</strong></label>
-                                                        <input type="text" class="form-control" placeholder="Enter second Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <label><strong>Other Names</strong></label>
-                                                        <input type="text" class="form-control" placeholder="Enter Other name">
-                                                    </div>
-                                                </div>
-
-                                                
-                                                <div class="col-sm-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <label><strong>National ID/PPT Num</strong></label>
-                                                        <input type="text" class="form-control" placeholder="Enter ">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <label><strong>Phone</strong></label>
-                                                        <input type="text" class="form-control" placeholder="Enter Phone Number">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-sm-12 col-md-4">
-                                                    <div class="form-group">
-                                                        <label><strong>Email</strong></label>
-                                                        <input type="text" class="form-control" placeholder="Enter email address">
-                                                    </div>
-                                                </div>
-
-                                                <input type="file" class="d-none" id="empProf" accept="image/*">
-
-                                                
+                                              
 
                                             </div>
 
 
-                                        </div>
+                                        </form>
 
-                                        <div class="col-sm-12 col-md-4 col-lg-3">
-                                            <div class="prof-container bg-light">
-                                                <img src="demo/img/form-svgs/image.svg" class="img selected-image the-imgage-previewe" id="selected-image">
+                                        <div class="col-sm-12 col-md-5 col-lg-5 bg-light">
+                                           <div class="pt-3">
+                                            <h6 class="mb-3">Current Payslip Items</h6>                                                
+                                            
+                                            <table class="table table-sm">
+                                                <thead>
+                                                  <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Deductions & Allowances</th> 
+                                                    <th>Actions</th>                                                   
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Basic Salary</td>  
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger btn--icon-text"><i class="zmdi zmdi-close"></i>Remove</button>
+                                                        <button class="btn btn-sm btn-info btn--icon-text"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                    </td>                                                 
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Transport allowance</td>  
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger btn--icon-text"><i class="zmdi zmdi-close"></i>Remove</button>
+                                                        <button class="btn btn-sm btn-info btn--icon-text"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                    </td>                                                  
+                                                  </tr>
+                                                  <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Housing Allowances</td>  
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger btn--icon-text"><i class="zmdi zmdi-close"></i>Remove</button>
+                                                        <button class="btn btn-sm btn-info btn--icon-text"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                    </td>                                                  
+                                                  </tr>
+                                                </tbody>
+                                              </table>
 
-                                            </div>
-                                            <label class="btn btn-block btn-secondary" for="empProf"><i class="zmdi zmdi-camera btn--icon-text"></i> Select Image</label>
 
+                                           </div>
                                         </div>
                                        
-                                    </form>
+                                    </div>
 
                                 </div>
                         </div>
