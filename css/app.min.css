@@ -8830,7 +8830,7 @@ select.form-control {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #0160a2;
+    background-color: #f16b29;
     top: 5px;
     left: 5px
 }
@@ -15954,4 +15954,22 @@ padding:1.25rem 2.2rem;
 .the-imgage-previewe{
     height: 89px;
     opacity: 24%;
+}
+.payslip-maker-table input{
+    text-align: right;
+}
+.payslip-maker-table tr td:last-child, .payslip-maker-table tr td:nth-child(even),.payslip-maker-table tr th:last-child,.payslip-maker-table tr th:nth-child(even){
+    text-align: right;
+}
+
+.payslip-maker-table tfoot tr th{
+    font-size: 18px;
+}
+
+.payslip-maker-table{
+    margin-top: 1.5rem;
+}
+.filter-container{
+    display: flex;
+    justify-content: flex-end;
 }

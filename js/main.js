@@ -104,6 +104,80 @@ $(window).on('load', function(){
 
 	//    image changing
 
+	//deductions and allowances computations
+	var allowancesText=$('.alowances-totals');
+	var deductionsText=$('.deductions-totals');
+
+	deductionsCreator();
+
+	function numberWithCommas(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+
+	function totalSalary(){
+		var deductions=parseInt(deductionsText.text());
+		var allowances=parseInt(allowancesText.text());
+		var totalSalary=allowances-deductions;
+
+		$('.totalSalo').text(numberWithCommas('KES '+totalSalary));
+
+
+	}
+
+	$('.payslip-maker-table tr td:nth-child(even) input').on('change', function(){
+		var allowance =$(this).val();
+		allowance=parseInt(allowance);
+		var totalAllowance=parseInt(allowancesText.text());
+		totalAllowance=totalAllowance+allowance;
+		allowancesText.text(totalAllowance);
+
+		totalSalary();
+	});
+
+	$('.payslip-maker-table tr td:last-child input').on('change', function(){
+		var deduction =$(this).val();
+		deduction=parseInt(deduction);
+		var totalDeductions=parseInt(deductionsText.text());
+		totalDeductions=totalDeductions+deduction;
+		deductionsText.text(totalDeductions);
+
+		totalSalary();
+		
+	});
+
+	var lastMonth=moment().subtract(1, 'months').format('MMMM');
+	//alert(lastMonth);
+	$('.payrollMonth').text(lastMonth);
+
+	$('.drop-txt a').on('click', function(){
+		var theTxt=$(this).text();
+		//alert(theTxt);
+		$(this).parent().prev().text(theTxt);
+	});
+
+	
+
+
+
+	function deductionsCreator(){
+		$('.payslip-maker-table tr td input').each(function(index, value) {
+			
+			var totDeductions=0;
+			var deductions=$(this).val();
+
+			if(deductions===""){
+				deductions=0;
+			}
+			deductions=parseInt(deductions);
+	
+			totDeductions=deductions+totDeductions
+			
+			deductionsText.text(totDeductions);
+			//alert(deductions);
+	
+		});
+	}
+
 	
 	
 	//decline requests

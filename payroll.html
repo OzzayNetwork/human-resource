@@ -198,7 +198,7 @@
 
             <!-- Modal -->
             <div class="modal fade" id="slipModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Payslip</h5>
@@ -207,7 +207,119 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                    ...
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                               <div class="row">
+                                    <div class="col-auto pr-0">
+                                        <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
+                                            <span>MN</span>
+                                        </div>
+                                </div>
+
+                                    <div class="col-auto">
+                                        <h5 class="mb-0">Mary Njue</h5>
+                                        <span>Emp ID: 4581 | Marketing Officer</span>
+                                    </div>
+                               </div>
+                            </div>
+                            <div class="col-12">
+                                <hr>
+                                <p>Kindly correctly enter the allowances and deductions  for this employee</p>
+                            </div>
+
+                            <div class="col-sm-12 col-md-5">
+                                <div class="form-group">
+                                    <label><strong>Select the Month</strong></label>
+                                    <select class="form-control selectpicker" data-live-search="true" title="Select Payslip month.">
+                                        <option>January</option>
+                                        <option>February</option>
+                                        <option>March</option>
+                                        <option>April</option>
+                                        <option>May</option>
+                                        <option>June</option>
+                                        <option>July</option>
+                                        <option>August</option>
+                                        <option>September</option>
+                                        <option>October</option>
+                                        <option>November</option>
+                                        <option>December</option>
+                                    </select>
+                                    <small>The last payroll created for this employee was for <strong>January</strong> and was cleared on <strong>12th Feb 2020.</strong></small>
+                                </div>
+                            </div>
+                            <div class="col-12 ">
+                                <table class="table table-borderless table-bordered payslip-maker-table m-0">
+                                    <thead class="thead-dark">
+                                      <tr>
+                                        <th scope="col">Payslip Items</th>
+                                        <th scope="col">Allowances</th>
+                                        <th scope="col">Deductions</th>
+                                      </tr>
+                                    </thead>
+
+                                    <tfoot class="thead-dark">
+                                        <tr>
+                                          <th scope="col">Sub Totals</th>
+                                          <th scope="col"><span class="text-success alowances-totals">0</span></th>
+                                          <th scope="col"><span class="text-danger deductions-totals">0</span></th>
+                                        </tr>
+                                    </tfoot>
+
+                                    <tbody>
+                                      <tr>
+                                        <td>Basic Salary</td>
+                                        <td>
+                                            <input type="number" class="form-control form-control-sm" placeholder="Allowance Amount">
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" placeholder="Deduction Amount">
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Transport Allowances</td>
+                                        <td>
+                                            <input type="number" class="form-control form-control-sm" placeholder="Allowance Amount">
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" placeholder="Deduction Amount">
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>PAYE (Tax)</td>
+                                        <td>
+                                            <input type="number" class="form-control form-control-sm" placeholder="Allowance Amount">
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" placeholder="Deduction Amount">
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Housing Allowances</td>
+                                        <td>
+                                            <input type="number" class="form-control form-control-sm" placeholder="Allowance Amount">
+                                        </td>
+                                        <td>
+                                            <input type="number" class="form-control" placeholder="Deduction Amount">
+                                        </td>
+                                      </tr>
+                                      
+                                    </tbody>
+                                  </table>
+
+                                  
+                                  
+
+                            </div>
+                            <div class="col-12">
+                                <div class="col-12 bg-light py-4">
+                                    <p class="mb-0 pb-0 mt-2"><small>Total Income</small></p>
+                                     <h4 class="totalSalo ">KES 0</h4>
+                               </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -260,6 +372,57 @@
                 <div class="row ">
                     <div class="col-12 p-0 to-be-navigated">
                         <div class="card table-custom-bg animated fade-in">
+                            <div class="card-header new-header">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                    <!-- Title -->
+                                    <h4 class="card-header-title py-2">
+                                       Employees Payslips
+                                    </h4>
+                                    </div>
+                                    <div class="col">
+                                        <div class="filter-container">
+                                            <div class="dropdown">
+
+                                                <div class="radio radio--inline">
+                                                    <input type="radio" name="slipFilter" checked id="allPayslips">
+                                                    <label class="radio__label" for="allPayslips">All Payslips</label>
+                                                </div>
+
+                                                <div class="radio radio--inline">
+                                                    <input type="radio" name="slipFilter"" id="paidPayslisp">
+                                                    <label class="radio__label" for="paidPayslisp">Paid</label>
+                                                </div>
+
+                                                <div class="radio radio--inline">
+                                                    <input type="radio" name="slipFilter" id="pendingPayslips">
+                                                    <label class="radio__label" for="pendingPayslips">Pending</label>
+                                                </div>
+
+                                                <button class="btn btn-info dropdown-toggle payrollMonth" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                  January
+                                                </button>
+                                                <div class="dropdown-menu drop-txt" aria-labelledby="dropdownMenuButton">
+                                                  <a class="dropdown-item" href="#">January</a>
+                                                  <a class="dropdown-item" href="#">February</a>
+                                                  <a class="dropdown-item" href="#">March</a>
+                                                  <a class="dropdown-item" href="#">April</a>
+                                                  <a class="dropdown-item" href="#">May</a>
+                                                  <a class="dropdown-item" href="#">June</a>
+                                                  <a class="dropdown-item" href="#">July</a>
+                                                  <a class="dropdown-item" href="#">August</a>
+                                                  <a class="dropdown-item" href="#">September</a>
+                                                  <a class="dropdown-item" href="#">October</a>
+                                                  <a class="dropdown-item" href="#">November</a>
+                                                  <a class="dropdown-item" href="#">December</a>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+    
+                                </div> 
+                                <!-- / .row -->				
+                                </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-hover table-custom spacing8" id="data-table">
@@ -268,6 +431,7 @@
                                                 <th>#</th>
                                                 <th>Name</th>
                                                 <th></th>
+                                                <th>Date created</th>
                                                 <th class="text-right">Role</th>
                                                 <th class="text-right">Salary</th>
                                                 <th class="text-right">Status</th> 
@@ -286,6 +450,10 @@
                                                     <h5 class="mb-0">Mary Njue</h5>
                                                     <span>marynjue99@gmail.com</span>
 
+                                                </td>
+                                                <td>
+                                                    <span><strong>23 Oct 2020</strong></span><br>
+                                                    <span>By Alex wanjala</span>
                                                 </td>
                                                 <td class="text-right">
                                                    Marketing Officer
@@ -329,6 +497,11 @@
                                                     <span>marynjue99@gmail.com</span>
 
                                                 </td>
+
+                                                <td>
+                                                    <span><strong>23 Oct 2020</strong></span><br>
+                                                    <span>By Alex wanjala</span>
+                                                </td>
                                                 <td class="text-right">
                                                    Marketing Officer
                                                 </td>
@@ -371,6 +544,10 @@
                                                     <span>marynjue99@gmail.com</span>
 
                                                 </td>
+                                                <td>
+                                                    <span><strong>23 Oct 2020</strong></span><br>
+                                                    <span>By Alex wanjala</span>
+                                                </td>
                                                 <td class="text-right">
                                                    Marketing Officer
                                                 </td>
@@ -413,6 +590,10 @@
                                                     <span>marynjue99@gmail.com</span>
 
                                                 </td>
+                                                <td>
+                                                    <span><strong>23 Oct 2020</strong></span><br>
+                                                    <span>By Alex wanjala</span>
+                                                </td>
                                                 <td class="text-right">
                                                    Marketing Officer
                                                 </td>
@@ -454,6 +635,10 @@
                                                     <h5 class="mb-0">Mary Njue</h5>
                                                     <span>marynjue99@gmail.com</span>
 
+                                                </td>
+                                                <td>
+                                                    <span><strong>23 Oct 2020</strong></span><br>
+                                                    <span>By Alex wanjala</span>
                                                 </td>
                                                 <td class="text-right">
                                                    Marketing Officer
@@ -620,12 +805,31 @@
                                                   </tr>
                                                   <tr>
                                                     <th scope="row">3</th>
+                                                    <td>PAYE (Tax)</td>  
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger btn--icon-text"><i class="zmdi zmdi-close"></i>Remove</button>
+                                                        <button class="btn btn-sm btn-info btn--icon-text"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                    </td>                                                  
+                                                  </tr>
+
+                                                  <tr>
+                                                    <th scope="row">4</th>
                                                     <td>Housing Allowances</td>  
                                                     <td>
                                                         <button class="btn btn-sm btn-danger btn--icon-text"><i class="zmdi zmdi-close"></i>Remove</button>
                                                         <button class="btn btn-sm btn-info btn--icon-text"><i class="zmdi zmdi-edit"></i>Edit</button>
                                                     </td>                                                  
                                                   </tr>
+
+                                                  <tr>
+                                                    <th scope="row">5</th>
+                                                    <td>N.H.I.F</td>  
+                                                    <td>
+                                                        <button class="btn btn-sm btn-danger btn--icon-text"><i class="zmdi zmdi-close"></i>Remove</button>
+                                                        <button class="btn btn-sm btn-info btn--icon-text"><i class="zmdi zmdi-edit"></i>Edit</button>
+                                                    </td>                                                  
+                                                  </tr>
+
                                                 </tbody>
                                               </table>
 
