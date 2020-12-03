@@ -15973,3 +15973,9 @@ padding:1.25rem 2.2rem;
     display: flex;
     justify-content: flex-end;
 }
+.text-female{
+    color: #b73377;
+}
+.text-male{
+    color: #2ca9d9;
+}
