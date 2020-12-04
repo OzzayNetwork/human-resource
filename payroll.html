@@ -386,17 +386,17 @@
                                             <div class="dropdown">
 
                                                 <div class="radio radio--inline">
-                                                    <input type="radio" name="slipFilter" checked id="allPayslips">
+                                                    <input type="radio" class="slipFilter" name="slipFilter" value="allSlip" checked id="allPayslips">
                                                     <label class="radio__label" for="allPayslips">All Payslips</label>
                                                 </div>
 
                                                 <div class="radio radio--inline">
-                                                    <input type="radio" name="slipFilter"" id="paidPayslisp">
+                                                    <input type="radio" class="slipFilter" name="slipFilter" value="paidSlip" id="paidPayslisp">
                                                     <label class="radio__label" for="paidPayslisp">Paid</label>
                                                 </div>
 
                                                 <div class="radio radio--inline">
-                                                    <input type="radio" name="slipFilter" id="pendingPayslips">
+                                                    <input type="radio" class="slipFilter" name="slipFilter" value="pendingSlip" id="pendingPayslips">
                                                     <label class="radio__label" for="pendingPayslips">Pending</label>
                                                 </div>
 
@@ -426,7 +426,7 @@
                                 </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-hover table-custom spacing8" id="data-table">
+                                    <table class="table table-hover table-custom spacing8" id="payslips">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -464,7 +464,7 @@
                                                 </td>
                                               
                                                 <td class="text-right">
-                                                    <span class="badge pill badge-soft-warning">Pending</span>
+                                                    <span class="badge pill badge-soft-success">Paid</span>
                                                 </td>
                                                 <td class="text-right">
                                                     <button class="btn btn-sm btn-success btn--icon-text ml-2 leaveButton" data-toggle="modal" data-target="#salary-disbursment">
@@ -557,7 +557,7 @@
                                                 </td>
                                               
                                                 <td class="text-right">
-                                                    <span class="badge pill badge-soft-warning">Pending</span>
+                                                    <span class="badge pill badge-soft-success">Paid</span>
                                                 </td>
                                                 <td class="text-right">
                                                     <button class="btn btn-sm btn-success btn--icon-text ml-2 leaveButton" data-toggle="modal" data-target="#salary-disbursment">
@@ -968,7 +968,9 @@
         <!-- App functions and actions -->
      	<script src="js/wow.js"></script>
         <script src="js/app.min.js"></script>
+        <script src="js/datatables.js"></script>
         <script src="js/main.js"></script>
+        
 					
         <script src="js/chart-data/revenue-targets.js"></script>
         <script src="js/chart-data/revenue-streams.js"></script>
