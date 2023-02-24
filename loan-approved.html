@@ -189,7 +189,7 @@
 
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label><strong>Declined By</strong></label>
+                                    <label><strong>Approved By</strong></label>
                                     <p>Alex Wanjala</p>
                                 </div>
                             </div>
@@ -203,8 +203,10 @@
 
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label><strong>Reason For Declining</strong></label>
-                                    <p>The applicant's salary does not meet the loan threshhold he is applying for.</p>
+                                    <label class="text-capitalize"><strong>Current Loan status</strong></label>
+                                    <p>
+                                        <span class="text-capitalize badge badge-soft-success">Disbursed</span>
+                                    </p>
                                 </div>
                             </div>
 
@@ -229,7 +231,7 @@
                                 <ol class="breadcrumb border-0">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                                     <li class="breadcrumb-item">Loans</li>
-                                    <li class="breadcrumb-item active">Declined Applications</li>
+                                    <li class="breadcrumb-item active">Approved Loans Applications</li>
     
                                 </ol>
                             </div>
@@ -241,22 +243,7 @@
                         </div>
                     </div>
                 </header>
-                <div class="row d-none">
-                    <div class="col-12 mb-3">
-                        <ul class="nav nav-pills navigated">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">All Employees</a>
-                            </li>
-                            <li class="nav-item d-none">
-                                <a class="nav-link" href="#">Employees On Leave</a>
-                            </li>    
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Add an Employee</a>
-                            </li>                          
-
-                        </ul>
-                    </div>
-                </div>
+                
 
                 <div class="row ">
                     <div class="col-12 p-0 to-be-navigated">
@@ -269,10 +256,10 @@
                                                 <th>Name</th>
                                                 <th></th>
                                                 <th>Application Date</th>
-                                                <th>Date Declined</th>
+                                                <th>Date Approved</th>
+                                                <th>Loan Status </th> 
                                                 <th class="text-right">Amount</th>      
-                                                <th>Reason </th>                                          
-                                                <th>Actions</th>                                               
+                                                <th>Actions</th>                                          
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -291,15 +278,53 @@
                                                 <td>12 Jan 2023 09:07 AM</td>
                                                 <td>
                                                     <p class="mb-0 text-black">12 Jan 2023 12:34 PM</p>
-                                                    <span>Declined By Amos Njue</span>
+                                                    <span>Approved By Amos Njue</span>
                                                     
+                                                </td>
+                                                <td class="">
+                                                   <span class="text-capitalize badge badge-soft-warning">Pending</span>
                                                 </td>
                                                 <td class="text-right">
                                                    KES 150,000
                                                 </td>
-                                                <td class="">
-                                                    The slary does not meet the minimu lan requirement.
+                                               
+                                               
+                                                <td>
+                                                    
+
+                                                    <button class="btn btn-sm btn-info btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-eye"></i> View Details
+                                                    </button>
+
+                                                   
                                                 </td>
+                                            </tr>
+
+                                            <tr>
+                                                
+                                                <td class="width45">
+                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
+                                                        <span>MN</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5 class="mb-0">Mary Njue</h5>
+                                                    <span>marynjue99@gmail.com</span>
+
+                                                </td>
+                                                <td>12 Jan 2023 09:07 AM</td>
+                                                <td>
+                                                    <p class="mb-0 text-black">12 Jan 2023 12:34 PM</p>
+                                                    <span>Approved By Amos Njue</span>
+                                                    
+                                                </td>
+                                                <td class="">
+                                                   <span class="text-capitalize badge badge-soft-success">Disbursed</span>
+                                                </td>
+                                                <td class="text-right">
+                                                   KES 150,000
+                                                </td>
+                                               
                                                
                                                 <td>
                                                     
@@ -326,15 +351,53 @@
                                                 <td>12 Jan 2023 09:07 AM</td>
                                                 <td>
                                                     <p class="mb-0 text-black">12 Jan 2023 12:34 PM</p>
-                                                    <span>Declined By Amos Njue</span>
+                                                    <span>Approved By Amos Njue</span>
                                                     
+                                                </td>
+                                                <td class="">
+                                                   <span class="text-capitalize badge badge-soft-warning">Pending</span>
                                                 </td>
                                                 <td class="text-right">
                                                    KES 150,000
                                                 </td>
-                                                <td class="">
-                                                    The slary does not meet the minimu lan requirement.
+                                               
+                                               
+                                                <td>
+                                                    
+
+                                                    <button class="btn btn-sm btn-info btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-eye"></i> View Details
+                                                    </button>
+
+                                                   
                                                 </td>
+                                            </tr>
+
+                                            <tr>
+                                                
+                                                <td class="width45">
+                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
+                                                        <span>MN</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5 class="mb-0">Mary Njue</h5>
+                                                    <span>marynjue99@gmail.com</span>
+
+                                                </td>
+                                                <td>12 Jan 2023 09:07 AM</td>
+                                                <td>
+                                                    <p class="mb-0 text-black">12 Jan 2023 12:34 PM</p>
+                                                    <span>Approved By Amos Njue</span>
+                                                    
+                                                </td>
+                                                <td class="">
+                                                   <span class="text-capitalize badge badge-soft-success">Disbursed</span>
+                                                </td>
+                                                <td class="text-right">
+                                                   KES 150,000
+                                                </td>
+                                               
                                                
                                                 <td>
                                                     
@@ -361,15 +424,16 @@
                                                 <td>12 Jan 2023 09:07 AM</td>
                                                 <td>
                                                     <p class="mb-0 text-black">12 Jan 2023 12:34 PM</p>
-                                                    <span>Declined By Amos Njue</span>
+                                                    <span>Approved By Amos Njue</span>
                                                     
+                                                </td>
+                                                <td class="">
+                                                   <span class="text-capitalize badge badge-soft-warning">Pending</span>
                                                 </td>
                                                 <td class="text-right">
                                                    KES 150,000
                                                 </td>
-                                                <td class="">
-                                                    The slary does not meet the minimu lan requirement.
-                                                </td>
+                                               
                                                
                                                 <td>
                                                     
@@ -381,6 +445,44 @@
                                                    
                                                 </td>
                                             </tr>
+
+                                            <tr>
+                                                
+                                                <td class="width45">
+                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
+                                                        <span>MN</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5 class="mb-0">Mary Njue</h5>
+                                                    <span>marynjue99@gmail.com</span>
+
+                                                </td>
+                                                <td>12 Jan 2023 09:07 AM</td>
+                                                <td>
+                                                    <p class="mb-0 text-black">12 Jan 2023 12:34 PM</p>
+                                                    <span>Approved By Amos Njue</span>
+                                                    
+                                                </td>
+                                                <td class="">
+                                                   <span class="text-capitalize badge badge-soft-success">Disbursed</span>
+                                                </td>
+                                                <td class="text-right">
+                                                   KES 150,000
+                                                </td>
+                                               
+                                               
+                                                <td>
+                                                    
+
+                                                    <button class="btn btn-sm btn-info btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-eye"></i> View Details
+                                                    </button>
+
+                                                   
+                                                </td>
+                                            </tr>
+                                            
 
                                            
                                         </tbody>
