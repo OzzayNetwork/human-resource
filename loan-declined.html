@@ -6,8 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		
-		<link rel='icon' href='demo/img/sacco-benki-fav.png' type='image/x-icon'/>
-		<title>Tpoint | Human resource Dashboard</title>
+		<link rel='icon' href='demo/img/sacco-benki-fav.png' type='image/x-icon'/ >
+		<title>Sacco Benki | Human resource Dashboard</title>
 
 		<!-- icon fonts -->
 
@@ -32,6 +32,10 @@
         <link rel="stylesheet" href="vendors/flatpickr/flatpickr.min.css" />
         <link rel="stylesheet" href="vendors/rateyo/jquery.rateyo.min.css">
         <link rel="stylesheet" href="vendors/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+
+        <!-- bootstrap select -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
 
         <!-- App styles -->
 		<link rel="stylesheet" href="css/app.min.css">
@@ -144,57 +148,54 @@
                     </ul>
                 </div>
             </aside>
-			
-			<div class="content--full map-main-container d-none">
-					<div class="col-12">
-						<header class="content__title px-0 border-0">
-				 	<div class="row">
-						<div class="col-md-6 col-sm-12">
-							<span class="rev-title-container">
-							 <h1 class="text-capitalize stream_name m-0">Biller Dashboard</h1>
-							</span>
-							<div class="">
-								<ol class="breadcrumb border-0">
-									<li class="breadcrumb-item">Home</li>
-									<li class="breadcrumb-item active">Dashboard</li>
-								
-								</ol>
-								
-							</div>
-						</div>
-					</div>
-				</header>
-					</div>
-					<div class="pb-4">
-						<div class="col-12">
-							<h4 class="text-white text-light d-none">Revenue Collection By Subcounty</h4>
-							<div id="the-map-container">
-							</div>
-<!--							control buttons-->
-							<div class="row map-buttons d-flex">
-									<span class="map-date p-3 text-white ml-3">30 Jun 2020</span>
-								<div class="col">
-									<button id="today" disabled="true" class="active"><span></span>Today: 7,895,897</button>
-									 <button id="this-week"><span></span>This Week: 15,237,895,897</button>
-									 <button id="this-month"><span></span>June 2020: 21,237,895,897</button>
-									 <button id="financial-year"><span></span>FY 19/20: 452,237,895,897</button>
-								</div>
-							</div>
-<!--							control buttons-->
-						</div>
-					</div>
-			</div>
+
+
+             <!-- decline Modal -->
+             <div class="modal fade" id="declineModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="leaveFormTitle">Decline Application</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Enter the reason for declining the loan on the in put below.
+                        </p>
+                        <form class="row" id="leaveAppForm">
+                           
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label><strong>Reason</strong></label>
+                                    <textarea class="form-control textarea-autosize text-counter" placeholder="Enter Reason ..." style="overflow: hidden; overflow-wrap: break-word; height: 81px;"></textarea>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer bg-light py-4">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" form="leaveAppForm">Submit</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+		
 			<section class="content custom-table-container">
                 <header class="content__title px-0 border-0">
                     <div class="row">
                         <div class="col-md-8 col-sm-12">
                             <span class="rev-title-container">
-                                    <h1 class="text-capitalize stream_name m-0">System Users</h1>
+                                    <h1 class="text-capitalize stream_name m-0">Loans Applications</h1>
                                    </span>
                             <div class="">
                                 <ol class="breadcrumb border-0">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active">System Users</li>
+                                    <li class="breadcrumb-item">Loans</li>
+                                    <li class="breadcrumb-item active">Declined Applications</li>
     
                                 </ol>
                             </div>
@@ -206,14 +207,17 @@
                         </div>
                     </div>
                 </header>
-                <div class="row">
+                <div class="row d-none">
                     <div class="col-12 mb-3">
                         <ul class="nav nav-pills navigated">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Users</a>
+                                <a class="nav-link active" href="#">All Employees</a>
                             </li>
+                            <li class="nav-item d-none">
+                                <a class="nav-link" href="#">Employees On Leave</a>
+                            </li>    
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Add User</a>
+                                <a class="nav-link" href="#">Add an Employee</a>
                             </li>                          
 
                         </ul>
@@ -230,14 +234,15 @@
                                             <tr>
                                                 <th>Name</th>
                                                 <th></th>
-                                                <th>System Role</th>
-                                                <th>Created Date</th>
-                                                <th>Role</th>
-                                                <th>Action</th>                                                
+                                                <th>Application Date</th>
+                                                <th class="text-right">Monthly Salary</th>
+                                                <th class="text-right">Amount</th>                                                
+                                                <th>Actions</th>                                               
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
+                                                
                                                 <td class="width45">
                                                     <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
                                                         <span>MN</span>
@@ -249,345 +254,214 @@
 
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                    12 Jan 2023 12:34 PM
                                                 </td>
-                                                <td>
-                                                    23 Oct 2020
+                                                <td class="text-right">
+                                                   KES 150,000
                                                 </td>
-                                                <td>
-                                                    Finance Manager
+                                                <td class="text-right">
+                                                    <strong class="font-weight-bolder text-black">KES 50,000</strong>
                                                 </td>
+                                               
                                                 <td>
-                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-delete"></i> Delete
+                                                    
+
+                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-close"></i> Decline
                                                     </button>
 
                                                     <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-edit"></i> Edit
+                                                        <i class="zmdi zmdi-check"></i> Approve
                                                     </button>
 
                                                 </td>
                                             </tr>
 
                                             <tr>
+                                                
                                                 <td class="width45">
                                                     <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
+                                                        <span>NN</span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
+                                                    <h5 class="mb-0">Ndungu Njue</h5>
+                                                    <span>njue@gmail.com</span>
 
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                    12 Jan 2023 12:34 PM
                                                 </td>
-                                                <td>
-                                                    23 Oct 2020
+                                                <td class="text-right">
+                                                   KES 120,000
                                                 </td>
-                                                <td>
-                                                    Finance Manager
+                                                <td class="text-right">
+                                                    <strong class="font-weight-bolder text-black">KES 40,000</strong>
                                                 </td>
+                                               
                                                 <td>
-                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-delete"></i> Delete
+                                                    
+
+                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-close"></i> Decline
                                                     </button>
 
                                                     <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-edit"></i> Edit
+                                                        <i class="zmdi zmdi-check"></i> Approve
                                                     </button>
 
                                                 </td>
                                             </tr>
 
                                             <tr>
+                                                
                                                 <td class="width45">
                                                     <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
+                                                        <span>AW</span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
+                                                    <h5 class="mb-0">Alex Wanjala</h5>
+                                                    <span>wanjala@gmail.com</span>
 
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                    24 Jan 2023 11:45 PM
                                                 </td>
-                                                <td>
-                                                    23 Oct 2020
+                                                <td class="text-right">
+                                                   KES 360,000
                                                 </td>
-                                                <td>
-                                                    Finance Manager
+                                                <td class="text-right">
+                                                    <strong class="font-weight-bolder text-black">KES 58,000</strong>
                                                 </td>
+                                               
                                                 <td>
-                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-delete"></i> Delete
+                                                    
+
+                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-close"></i> Decline
                                                     </button>
 
                                                     <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-edit"></i> Edit
+                                                        <i class="zmdi zmdi-check"></i> Approve
                                                     </button>
 
                                                 </td>
                                             </tr>
 
                                             <tr>
+                                                
                                                 <td class="width45">
                                                     <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
+                                                        <span>SM</span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
+                                                    <h5 class="mb-0">Steve Musioki</h5>
+                                                    <span>steve@gmail.com</span>
 
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                    27 Jan 2023 08:57 PM
                                                 </td>
-                                                <td>
-                                                    23 Oct 2020
+                                                <td class="text-right">
+                                                   KES 396,700
                                                 </td>
-                                                <td>
-                                                    Finance Manager
+                                                <td class="text-right">
+                                                    <strong class="font-weight-bolder text-black">KES 92,000</strong>
                                                 </td>
+                                               
                                                 <td>
-                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-delete"></i> Delete
+                                                    
+
+                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-close"></i> Decline
                                                     </button>
 
                                                     <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-edit"></i> Edit
+                                                        <i class="zmdi zmdi-check"></i> Approve
                                                     </button>
 
                                                 </td>
                                             </tr>
 
                                             <tr>
+                                                
                                                 <td class="width45">
                                                     <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
-                                                        <span>MN</span>
+                                                        <span>AK</span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <h5 class="mb-0">Mary Njue</h5>
-                                                    <span>marynjue99@gmail.com</span>
+                                                    <h5 class="mb-0">Andrew Kibe</h5>
+                                                    <span>kifeeeee@gmail.com</span>
 
                                                 </td>
                                                 <td>
-                                                    <span class="badge badge-light">Super Admin</span>
+                                                   14 Feb 2023 12:34 PM
                                                 </td>
-                                                <td>
-                                                    23 Oct 2020
+                                                <td class="text-right">
+                                                   KES 100,000
                                                 </td>
-                                                <td>
-                                                    Finance Manager
+                                                <td class="text-right">
+                                                    <strong class="font-weight-bolder text-black">KES 27,900</strong>
                                                 </td>
+                                               
                                                 <td>
-                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-delete"></i> Delete
+                                                    
+
+                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-close"></i> Decline
                                                     </button>
 
                                                     <button class="btn btn-sm btn-success btn--icon-text ml-2">
-                                                        <i class="zmdi zmdi-edit"></i> Edit
+                                                        <i class="zmdi zmdi-check"></i> Approve
                                                     </button>
 
                                                 </td>
                                             </tr>
+
+                                            <tr>
+                                                
+                                                <td class="width45">
+                                                    <div class="avtar-pic w35 bg-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mary Njue">
+                                                        <span>KK</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <h5 class="mb-0">Kelvin Kinuthis</h5>
+                                                    <span>kinuthia@gmail.com</span>
+
+                                                </td>
+                                                <td>
+                                                    13 Feb 2023 08:08 AM
+                                                </td>
+                                                <td class="text-right">
+                                                   KES 150,000
+                                                </td>
+                                                <td class="text-right">
+                                                    <strong class="font-weight-bolder text-black">KES 76,000</strong>
+                                                </td>
+                                               
+                                                <td>
+                                                    
+
+                                                    <button class="btn btn-sm btn-danger btn--icon-text ml-2" data-toggle="modal" data-target="#declineModal">
+                                                        <i class="zmdi zmdi-close"></i> Decline
+                                                    </button>
+
+                                                    <button class="btn btn-sm btn-success btn--icon-text ml-2">
+                                                        <i class="zmdi zmdi-check"></i> Approve
+                                                    </button>
+
+                                                </td>
+                                            </tr>
+
+                                           
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="card animated fade-in d-none">
-                            <div class="card-header new-header">
-                                <div class="row align-items-center">
-                                    <div class="col">
-                                    <!-- Title -->
-                                    <h4 class="card-header-title py-2">
-                                       New System User
-                                    </h4>
-                                    </div>
-    
-                                </div> 
-                                <!-- / .row -->				
-                                </div>
-                                <div class="card-body ">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-4 bg-light">
-                                           <div class="row">
-                                               <div class="col-12 padding-custom">
-                                                    <div class="form-group">
-                                                        <label><strong>Employee ID</strong></label>
-                                                    <div class="form-inline d-flex">
-                                                            <input type="text" class="form-control flex-grow-1" placeholder="Enter The Employee ID">
-                                                            <button class="btn btn-info btn--icon-text ml-2 searching"><i class="zmdi zmdi-search "></i>Search</button>
-                                                    </div>
-                                                        <small>This must be entered first to continue</small>
-                                                    </div>
-                                               </div>
-                                               <div class="col-12 p-0 user-searched d-none animated fade-in-down">
-                                                   <hr>
-                                                <div class="listview listview--bordered">
-                                                    <div class="listview__item pt-0">
-                                                        <div class="listview__content">
-                                                            <div class="listview__heading">Name</div>
-                                                            <p><strong>Alex Wanjala Wafula</strong> - Finance Officer</p>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="listview__item pt-0">
-                                                        <div class="listview__content">
-                                                            <div class="listview__heading">Email Address</div>
-                                                            <p><strong>alex@gmail.com</strong></p>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="listview__item pt-0">
-                                                        <div class="listview__content">
-                                                            <div class="listview__heading">Phone</div>
-                                                            <p><strong><a href="tel:0705262358">0705262358</a></strong></p>
-                                                        </div>
-                                                    </div>
-                        
-                                                    <div class="listview__item pt-0">
-                                                        <div class="listview__content">
-                                                            <div class="listview__heading">Emp Number</div>
-                                                            <p><strong>HGH2313</strong></p>
-                                                        </div>
-                                                    </div>                        
-                                                   
-                                                </div>
-                                               </div>
-
-                                               <div class="col-12 p-5 not-searched animated fade-in-down">
-                                                   <img src="demo/img/form-svgs/open-box.svg">
-                                                   <p><strong>Search for an employee to continue</strong></p>
-                                               </div>
-                                           </div>
-                                        </div>
-
-                                        <div class="col-sm-12 col-md-8">
-                                            <div class="row">
-                                               <div class="col-12">
-                                                   <h4>Module permissions</h4>
-                                                   <p class="mb-4">Select the permissions that this user will be given access to</p>
-                                                    <table class="table large-font-table">
-                                                        <thead>
-                                                        <tr>
-                                                            <th scope="col"></th>
-                                                            <th scope="col"><strong>Read</strong></th>
-                                                            <th scope="col"><strong>Write</strong></th>
-                                                            <th scope="col"><strong>Delete</strong></th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td class="pl-0"><strong>Super Admin</strong></td>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck1">
-                                                                    <label class="checkbox__label" for="customCheck1">Can Read</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck2">
-                                                                    <label class="checkbox__label" for="customCheck2">Can Write</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck3">
-                                                                    <label class="checkbox__label" for="customCheck3">Can Delete</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="pl-0"><strong>Human Resource Admin</strong></td>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck10">
-                                                                    <label class="checkbox__label" for="customCheck10">Can Read</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck11">
-                                                                    <label class="checkbox__label" for="customCheck11">Can Write</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck12">
-                                                                    <label class="checkbox__label" for="customCheck12">Can Delete</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="pl-0"><strong>Finance Dashboard</strong></td>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck4">
-                                                                    <label class="checkbox__label" for="customCheck4">Can Read</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck5">
-                                                                    <label class="checkbox__label" for="customCheck5">Can Write</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck6">
-                                                                    <label class="checkbox__label" for="customCheck6">Can Delete</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                            <td class="pl-0"><strong>Operational Dashboard</strong></td>
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck7">
-                                                                    <label class="checkbox__label" for="customCheck7">Can Read</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck8">
-                                                                    <label class="checkbox__label" for="customCheck8">Can Write</label>
-                                                                </div>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="checkbox">
-                                                                    <input type="checkbox" id="customCheck9">
-                                                                    <label class="checkbox__label" for="customCheck9">Can Delete</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <hr>
-                                                    <button class="btn btn-primary btn--icon-text add-user-btn" disabled>Add User</button>
-                                               </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
                         </div>
                     </div>
                 </div>
@@ -702,7 +576,11 @@
 		<script src="https://code.highcharts.com/modules/drilldown.js"></script>
 		<script src="https://code.highcharts.com/modules/exporting.js"></script>
 		<script src="https://code.highcharts.com/modules/export-data.js"></script>
-		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        
+        <!-- bootstrap  select -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
 
 		<!--owl corousel-->
 		<script src="vendors/OwlCarousel/owl.carousel.min.js"></script>
@@ -723,7 +601,11 @@
 	
 		<!--map scripts-->
 		
-		<script src="js/chart-data/map-data.js"></script>
+        <script src="js/chart-data/map-data.js"></script>
+        
+        <script>
+            $('select').selectpicker();
+        </script>
 		
        
 		
