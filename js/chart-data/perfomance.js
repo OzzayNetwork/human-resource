@@ -92,13 +92,13 @@ Highcharts.chart('perfomance', {
     },
     series: [
         {
-            name: 'Last Year',
-            color: '#747a80',
+            name: 'Rejected Loans',
+            color: '#de2822',
             data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
     
         },{
-        name: 'This Year',
-        color: '#f26b29',
+        name: 'Approved Loans',
+        color: '#0a6eda',
         data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
 
     }, ]
